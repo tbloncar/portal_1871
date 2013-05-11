@@ -1,0 +1,4 @@
+<section style="margin-bottom: 200px;">
+<h1><%= @user.first_name %></h1>
+<%= gravatar_image_tag(@user.email, :alt => "#{@user.first_name}") %>
+</section>

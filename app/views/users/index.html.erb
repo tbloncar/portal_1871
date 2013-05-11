@@ -9,14 +9,14 @@
 	<li><a href="#">U-Z</a></li>
 </ul> -->
 <section>
-	<article>
+	<article class="users">
 		<% @users.each do |user| %>
-		<div class="user">
+		<a href="/users/<%= user.id %>" class="user">
 			<%= gravatar_image_tag(user.email, :alt => "#{user.first_name}") %>
 			<p>Name: <%= user.first_name %></p>
 			<p>Affiliation: N/A</p>
 			<p>Role: N/A</p>
-		</div>
+		</a>
 		<% end %>
 	</article>
 

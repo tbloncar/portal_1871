@@ -80,6 +80,16 @@ header {
   padding: 10px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
+  float: left;
+  width: 29%;
+  margin-right: 15px;
+  color: #222;
+  &:hover {
+    background: #eee;
+    color: #222;
+    text-decoration: none;
+    border: 1px solid #000;
+  }
   img {
     float: left;
     border: 1px solid #222;
@@ -87,6 +97,21 @@ header {
   }
 }
 
+
+footer {
+  height: 100px;
+  background: #eee;
+  padding-top: 15px;
+  margin-top: 40px;
+}
+
+.users {
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 22px;
+}
 
 
 

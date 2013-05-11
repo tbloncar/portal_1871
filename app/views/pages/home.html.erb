@@ -1,9 +1,9 @@
 <div class="row">
 	<div class="span6">
 		<article class="home-article">
-			<h2>Welcome to the 1871 Portal!</h2>
+			<h1>Welcome to the 1871 Portal!</h1>
 			<p>
-				Sign in to see fellow 1871'ers or create an account!
+				1871 is a co-working center for digital startups. Located in the famed Merchandise Mart, the 50,000-square-foot facility provides Chicago startups with affordable workspace and access to mentors, programming, educational resources, potential investors and a community of like-minded entrepreneurs.
 			</p>
 		</article>
 	</div>
@@ -14,10 +14,10 @@
 
 			<%= form_tag sessions_url do %>
 				<div class="home-input">
-				 <%= email_field_tag :email %>
+				 <%= email_field_tag :email, nil, :placeholder => "Email Address" %>
 				</div>
 				<div class="home-input">
-					<%= password_field_tag :password %>
+					<%= password_field_tag :password, nil, placeholder: 'Password' %>
 				</div>
 				<div class="home-input">
 					<input type="submit" value="Sign In">
@@ -30,16 +30,16 @@
 
 			<%= form_tag users_url do %>
 				<div class="home-input">
-					<%= email_field_tag :email %>
+					<%= email_field_tag :email, nil, placeholder: 'Email Address' %>
 				</div>
 				<div class="home-input">
-					<%= text_field_tag :first_name %>
+					<%= text_field_tag :first_name, nil, placeholder: 'Full Name' %>
 				</div>
 				<div class="home-input">
-					<%= password_field_tag :password %>
+					<%= password_field_tag :password, nil, placeholder: 'Password' %>
 				</div>
 				<div class="home-input">
-					<%= password_field_tag :password_confirmation %>
+					<%= password_field_tag :password_confirmation, nil, placeholder: 'Confirm Email Address' %>
 				</div>
 				<div class="home-input">
 					<input type="submit" value="Sign In">
