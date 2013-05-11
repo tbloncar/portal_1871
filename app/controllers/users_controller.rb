@@ -1,20 +1,22 @@
 class UsersController < ApplicationController
   def new
-    @user = Uuer.new
+    @user = User.new
   end
   def create
-    user = Uuer.new(params[:user])
+    @user = User.new(params[:user])
     if user.save
+      session[:user_id] = @user.id
       render 'index'
     else
       render 'new', notice: "Oops, we messed up. The user couldn't be created."
     end
   end
   def edit
-    @user = Uuer.find(params[:id])
+    @user = User.find(params[:id])
   end
   def update
-    @user = Uuer.find(params[:id])
+    @user = User.find(params[:id])
+
     @user.update_attributes(params[:user])
     if @user.save
       redirect_to companies_url
@@ -23,13 +25,13 @@ class UsersController < ApplicationController
     end
   end
   def index
-    @users = Uuer.all
+    @users = User.all
   end
   def show
-    @user = Uuer.find(params[:id])
+    @user = User.find(params[:id])
   end
   def destroy
-    @user = Uuer.find(params[:id])
+    @user = User.find(params[:id])
     if @user
       @user.destroy
       render 'index'
