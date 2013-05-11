@@ -13,6 +13,16 @@
 
 ActiveRecord::Schema.define(:version => 20130511164640) do
 
+  create_table "companies", :force => true do |t|
+    t.string "name"
+    t.string "website"
+    t.text   "bio"
+    t.string "logo_url"
+    t.string "twitter"
+    t.string "linkedin"
+    t.string "google"
+  end
+
   create_table "memberships", :force => true do |t|
     t.integer "user"
     t.integer "company"
