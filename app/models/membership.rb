@@ -1,6 +1,6 @@
 class Membership < ActiveRecord::Base
     attr_accessible :user_id, :company_id, :role_id
-    has_many :users
-    has_many :companies
+    belongs_to :user
+    belongs_to :company
     has_one :role
 end
