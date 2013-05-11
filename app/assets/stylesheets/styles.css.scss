@@ -1,0 +1,38 @@
+// ------------------------- *****
+// Styles for 1871 Portal
+// ------------------------- *****
+
+header {
+  height: 80px;
+  padding: 20px 0;
+  .container {
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 23px;
+  }
+  .logo {
+    background: url('/assets/1871-small.png') no-repeat 0 0;
+    padding-left: 80px;
+    padding-top: 15px;
+    display: block;
+    height: 55px;
+    margin-top: 10px;
+    width: 130px;
+    float: left;
+    font-size: 44px;
+    font-family: 'Days One', sans-serif;
+  }
+  nav {
+    display: block;
+    float: right;
+    margin-top: 25px;
+    a {
+      display: inline-block;
+      padding: 0 10px;
+      color: #222;
+      font-size: 14px;
+    }
+  }
+  .sign-in {
+    
+  }
+}
