@@ -1,5 +1,5 @@
 class Resource < ActiveRecord::Base
   attr_accessible :name, :url
-  belongs_to :skill
-  belongs_to :need
+  has_many :users, :through => :skills
+  has_many :companies, :through => :needs
 end
