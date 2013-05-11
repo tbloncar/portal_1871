@@ -1,2 +1,2 @@
-class Role < ActiveRecord::base
+class Role < ActiveRecord::Base
 end

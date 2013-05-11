@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511164640) do
+ActiveRecord::Schema.define(:version => 20130511171303) do
 
   create_table "companies", :force => true do |t|
     t.string "name"
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(:version => 20130511164640) do
   end
 
   create_table "memberships", :force => true do |t|
-    t.integer "user"
-    t.integer "company"
-    t.string  "role"
+    t.integer "user_id"
+    t.integer "company_id"
+    t.integer "role_id",    :limit => 255
   end
 
   create_table "roles", :force => true do |t|

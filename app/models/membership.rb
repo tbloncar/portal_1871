@@ -1,2 +1,2 @@
-class Membership < ActiveRecord::base
+class Membership < ActiveRecord::Base
 end
