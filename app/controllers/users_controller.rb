@@ -3,12 +3,17 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def create
-    @user = User.new(params[:user])
-    if user.save
+    @user = User.new
+    @user.email = params[:email]
+    @user.first_name = params[:first_name]
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
+
+    if @user.save
       session[:user_id] = @user.id
-      render 'index'
+      redirect_to users_url
     else
-      render 'new', notice: "Oops, we messed up. The user couldn't be created."
+      redirect_to root_url, notice: "Oops, we messed up. The user couldn't be created."
     end
   end
   def edit

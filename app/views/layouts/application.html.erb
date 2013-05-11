@@ -12,20 +12,26 @@
     <div class="container">
       <span class="logo">Portal</span>
       <nav>
-        <a href="#">Home</a>
-        <a href="#">People</a>
+        <a href="/">Home</a>
+        <a href="/users">People</a>
         <a href="#">Companies</a>
         <a href="#">Events</a>
         <a href="#">Office Hours</a>
-        <a href="#">Connect</a>  
+        <a href="#">Connect</a>
       </nav>
       <div class="welcome">
         <% %>
           <!-- <a href="#" class="sign-in">Sign In</a> -->
         <% %>
-          <span class="welcome">Welcome,
+          <span class="welcome">
             <a href="#">
-              Travis <img src="/assets/avatar.png">
+                <% if session[:user_id] %>
+                  <% @user = User.find(session[:user_id]) %>
+                  Welcome,
+                  <%= "#{@user.first_name}" %>,
+                  <%= gravatar_image_tag(@user.email, :alt => "#{@user.first_name}") %>
+                   <%= link_to "Sign Out", session_url, method: 'delete' %>
+                <% end %>
             </a>
         </span>
         <% %>
@@ -35,7 +41,7 @@
   <div class="container">
 
 <%= yield %>
-  
+
   </div>
 </body>
 </html>

@@ -8,39 +8,44 @@
 		</article>
 	</div>
 	<div class="span6">
-		<div class="user-sign-in">	
+		<% if !session[:user_id] %>
+		<div class="user-sign-in">
 			<h3>Sign In</h3>
-			<form>
+
+			<%= form_tag sessions_url do %>
 				<div class="home-input">
-					<input type="email" placeholder="Enter Email" name="email">
+				 <%= email_field_tag :email %>
 				</div>
 				<div class="home-input">
-					<input type="password" placeholder="Enter Password" name="password">
+					<%= password_field_tag :password %>
 				</div>
 				<div class="home-input">
 					<input type="submit" value="Sign In">
 				</div>
-			</form>
+			<% end %>
+
 		</div>
-		<div class="user-sign-in">	
+		<div class="user-sign-in">
 			<h3>Create an Account</h3>
-			<form>
+
+			<%= form_tag users_url do %>
 				<div class="home-input">
-					<input type="email" placeholder="Enter Email" name="email">
+					<%= email_field_tag :email %>
 				</div>
 				<div class="home-input">
-					<input type="text" placeholder="Enter Full Name" name="name">
+					<%= text_field_tag :first_name %>
 				</div>
 				<div class="home-input">
-					<input type="password" placeholder="Enter Password" name="password">
+					<%= password_field_tag :password %>
 				</div>
 				<div class="home-input">
-					<input type="password" placeholder="Confirm Password" name="password">
+					<%= password_field_tag :password_confirmation %>
 				</div>
 				<div class="home-input">
 					<input type="submit" value="Sign In">
 				</div>
-			</form>
+			<% end %>
+			<% end %>
 		</div>
 	</div>
 </div>
