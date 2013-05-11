@@ -33,4 +33,19 @@ ActiveRecord::Schema.define(:version => 20130511164640) do
     t.integer "name"
   end
 
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "bio"
+    t.string   "github"
+    t.string   "twitter"
+    t.string   "dribbble"
+    t.string   "linkedin"
+    t.string   "google"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
 end
